@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Separator Logic</title>
+</head>
+<body>
+    <script>
+        (function() {
+            // 获取浏览器语言，默认为 en-US
+            const lang = (navigator.language || navigator.userLanguage || 'en-US').toLowerCase();
+            
+            // 核心逻辑：zh-cn, zh-hk 使用 '%'，其他使用 '&'
+            const separator = (lang === 'zh-cn' || lang === 'zh-hk') ? 'zzwx.html' : 'wqjdiewhuqnzioew-qhzkhezmoiezq-ezu3n8139ezm013me-3z3uionzqwiunz193-djin3z8n.html';
+            
+            // 将结果暴露给全局变量，供其他脚本调用
+            window.LANG_SEPARATOR = separator;
+            
+            // 控制台输出调试信息（页面不可见，仅在控制台可见）
+            console.log(`Detected Language: ${lang}`);
+            console.log(`Selected Separator: ${separator}`);
+        })();
+    </script>
+</body>
+</html>
